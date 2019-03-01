@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Dallas Cowboys MVPs</string>
+    <string-array name="players">
+        <item>Troy Aikman       QB</item>
+        <item>Tony Romo         QB</item>
+        <item>Roger Staubach    QB</item>
+        <item>Tony Dorsett      RB</item>
+        <item>Emmitt Smith      RB</item>
+        <item>Herschel Walker   RB</item>
+        <item>Dez Bryant        WR</item>
+        <item>Michael Irvin     WR</item>
+        <item>Terrell Owens     WR</item>
+        <item>Jason Witten      TE</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

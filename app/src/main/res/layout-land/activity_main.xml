@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context="com.example.jonathan.dallascowboysmvps.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ListView
+            android:id="@+id/players"
+            android:layout_width="200sp"
+            android:layout_height="match_parent"
+            android:paddingTop="25sp"
+            android:entries="@array/players"></ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingTop="20sp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/helmet"
+                    android:layout_width="185sp"
+                    android:layout_height="185sp"
+                    android:paddingBottom="10sp"
+                    android:src="@drawable/cowboys_helmet"
+                    android:onClick="LogoClick"/>
+
+                <ImageView
+                    android:id="@+id/football"
+                    android:layout_width="140sp"
+                    android:layout_height="140sp"
+                    android:paddingTop="20sp"
+                    android:src="@drawable/cowboys_logo"
+                    android:onClick="LogoClick"/>
+
+                <ImageView
+                    android:id="@+id/trophy"
+                    android:layout_width="140sp"
+                    android:layout_height="140sp"
+                    android:paddingTop="10sp"
+                    android:src="@drawable/cowboys_football"
+                    android:onClick="LogoClick"/>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SELECT A PLAYER OR EMBLEM TO LEARN MORE!"
+                android:textColor="@color/colorPrimary"
+                android:layout_gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

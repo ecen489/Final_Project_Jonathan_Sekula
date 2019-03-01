@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="5sp"
+    tools:context=".StatsActivity">
+
+        <TextView
+            android:id="@+id/bio"
+            android:layout_width="180sp"
+            android:layout_height="100sp"
+            android:textColor="@color/colorPrimary" />
+
+        <ImageButton
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/baseline_videocam_black_18dp"
+            android:paddingTop="10sp"
+            android:background="@color/colorAccent" />
+
+</LinearLayout>
