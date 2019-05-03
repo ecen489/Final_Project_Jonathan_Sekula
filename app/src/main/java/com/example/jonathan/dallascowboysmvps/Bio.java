@@ -2,12 +2,22 @@ package com.example.jonathan.dallascowboysmvps;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -17,6 +27,14 @@ public class Bio extends Fragment {
 
     TextView bio;
     ImageButton camera;
+
+    FirebaseDatabase database;
+    DatabaseReference root_reference;
+
+    FirebaseAuth mAuth;
+    FirebaseUser user = null;
+
+    String player;
 
     public Bio() {
 
@@ -37,8 +55,12 @@ public class Bio extends Fragment {
     public void onActivityCreated(Bundle savedState) {
         super.onActivityCreated(savedState);
 
+        database = FirebaseDatabase.getInstance();
+        root_reference = database.getReference();
+        mAuth = FirebaseAuth.getInstance();
+
         Intent intent = getActivity().getIntent();
-        final String player = intent.getStringExtra("player");
+        player = intent.getStringExtra("player");
 
         camera.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,49 +71,29 @@ public class Bio extends Fragment {
             }
         });
 
-        switch(player) {
-            case "Troy Aikman":
-                bio.setText(ReadTxtFile(R.raw.troy_aikman_bio));
-                break;
+        ReadDatabase();
 
-            case "Tony Romo":
-                bio.setText(ReadTxtFile(R.raw.tony_romo_bio));
-                break;
+    }
 
-            case "Roger Staubach":
-                bio.setText(ReadTxtFile(R.raw.roger_staubach_bio));
-                break;
+    public void ReadDatabase() {
+        user = mAuth.getCurrentUser();
+        if (user != null) {
+            DatabaseReference player_reference = root_reference.child(player + "/Bio/");
+            player_reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    String bio_string = "";
+                    for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
+                        bio_string = bio_string + snapshot.getValue() + "\n";
+                    }
+                    bio.setText(bio_string);
+                }
 
-            case "Tony Dorsett":
-                bio.setText(ReadTxtFile(R.raw.tony_dorsett_bio));
-                break;
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            case "Emmitt Smith":
-                bio.setText(ReadTxtFile(R.raw.emmitt_smith_bio));
-                break;
-
-            case "Herschel Walker":
-                bio.setText(ReadTxtFile(R.raw.herschel_walker_bio));
-                break;
-
-            case "Dez Bryant":
-                bio.setText(ReadTxtFile(R.raw.dez_bryant_bio));
-                break;
-
-            case "Michael Irvin":
-                bio.setText(ReadTxtFile(R.raw.michael_irvin_bio));
-                break;
-
-            case "Terrell Owens":
-                bio.setText(ReadTxtFile(R.raw.terrell_owens_bio));
-                break;
-
-            case "Jason Witten":
-                bio.setText(ReadTxtFile(R.raw.jason_witten_bio));
-                break;
-
-            default:
-                break;
+                }
+            });
         }
 
     }

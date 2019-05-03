@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent"
+    android:background="#ffffff"
     xmlns:tools="http://schemas.android.com/tools">
 
     <LinearLayout
@@ -12,12 +12,32 @@
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
-        <ListView
-            android:id="@+id/players"
-            android:layout_width="200sp"
-            android:layout_height="match_parent"
-            android:paddingTop="25sp"
-            android:entries="@array/players"></ListView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/players"
+                android:layout_width="200sp"
+                android:layout_height="220sp"
+                android:paddingTop="25sp"></ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="5sp">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add New"
+                    android:onClick="AddNew"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,7 +53,7 @@
 
                 <ImageView
                     android:id="@+id/helmet"
-                    android:layout_width="185sp"
+                    android:layout_width="175sp"
                     android:layout_height="185sp"
                     android:paddingBottom="10sp"
                     android:src="@drawable/cowboys_helmet"
@@ -41,7 +61,7 @@
 
                 <ImageView
                     android:id="@+id/football"
-                    android:layout_width="140sp"
+                    android:layout_width="130sp"
                     android:layout_height="140sp"
                     android:paddingTop="20sp"
                     android:src="@drawable/cowboys_logo"
@@ -49,7 +69,7 @@
 
                 <ImageView
                     android:id="@+id/trophy"
-                    android:layout_width="140sp"
+                    android:layout_width="130sp"
                     android:layout_height="140sp"
                     android:paddingTop="10sp"
                     android:src="@drawable/cowboys_football"

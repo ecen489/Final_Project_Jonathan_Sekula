@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "247617195544",
+    "firebase_url": "https://dallascowboysmvps.firebaseio.com",
+    "project_id": "dallascowboysmvps",
+    "storage_bucket": "dallascowboysmvps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247617195544:android:4791a9ea5971b08b",
+        "android_client_info": {
+          "package_name": "com.example.jonathan.dallascowboysmvps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247617195544-27jesnnl58mb0ajcm5aoq93p1lr7ddkp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.jonathan.dallascowboysmvps",
+            "certificate_hash": "fa64aa7c412096c782b0a754505a556c3496793e"
+          }
+        },
+        {
+          "client_id": "247617195544-t85hsdfnonmvkec1tv2vdunsvq57slrh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCEMs343FPbml8xqg3utEErwYIxmS692Dk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247617195544-t85hsdfnonmvkec1tv2vdunsvq57slrh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
